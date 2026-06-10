@@ -424,6 +424,29 @@ def render_sitemap(paths):
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
 
 
+def render_llms(mods):
+    by_cat = {}
+    for m in mods:
+        by_cat.setdefault(m.CATEGORY, []).append(m)
+    lines = ["# Kaizen Gold", "",
+             "> Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a leading UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai. Operating from London, UK and Dubai, UAE.",
+             "",
+             "Kaizen Gold publishes a Gold Trading Knowledge Centre: practical, expert explanations of international gold transactions — doré, refinery assays, CIF delivery, documentary letters of credit, LBMA pricing, compliance and the Dubai market.",
+             "",
+             "## Company", "",
+             f"- [About Kaizen Gold]({SITE}/about/): what the firm does, its process, markets served and compliance approach",
+             f"- [Gold Trading FAQ]({SITE}/faq/): direct answers to common questions on pricing, shipping, assay, settlement, trade finance, compliance and fraud prevention",
+             f"- [Knowledge Centre]({SITE}/knowledge/): all expert articles", ""]
+    for cat in sorted(by_cat):
+        lines.append(f"## {cat}")
+        lines.append("")
+        for m in by_cat[cat]:
+            lines.append(f"- [{m.TITLE}]({SITE}/knowledge/{m.SLUG}/): {m.CARD}")
+        lines.append("")
+    lines += ["## Contact", "", f"- Email: {EMAIL}", "- Locations: London, UK & Dubai, UAE", ""]
+    write("llms.txt", "\n".join(lines))
+
+
 def main():
     write("assets/site.css", CSS)
     mods = load_articles()
@@ -435,6 +458,7 @@ def main():
     render_about()
     patch_index(paths)
     render_sitemap(paths)
+    render_llms(mods)
     print(f"\nDone: {len(mods)} articles, {n} FAQs, {len(paths)} URLs in sitemap.")
 
 

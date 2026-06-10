@@ -1,0 +1,72 @@
+# Kaizen Gold
+
+> Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a leading UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai. Operating from London, UK and Dubai, UAE.
+
+Kaizen Gold publishes a Gold Trading Knowledge Centre: practical, expert explanations of international gold transactions — doré, refinery assays, CIF delivery, documentary letters of credit, LBMA pricing, compliance and the Dubai market.
+
+## Company
+
+- [About Kaizen Gold](https://kaizengold.com/about/): what the firm does, its process, markets served and compliance approach
+- [Gold Trading FAQ](https://kaizengold.com/faq/): direct answers to common questions on pricing, shipping, assay, settlement, trade finance, compliance and fraud prevention
+- [Knowledge Centre](https://kaizengold.com/knowledge/): all expert articles
+
+## Compliance
+
+- [Gold AML Requirements Explained](https://kaizengold.com/knowledge/gold-aml-requirements/): Why gold is a high-risk sector for money laundering and what dealers must do: CDD, monitoring, reporting, records.
+- [KYC Procedures in Precious Metals](https://kaizengold.com/knowledge/kyc-procedures-in-precious-metals/): Who you're really dealing with — the identity, ownership and licensing checks that precede every legitimate gold deal.
+- [OECD Gold Supply Chain Guidance Explained](https://kaizengold.com/knowledge/oecd-gold-supply-chain-guidance/): The five-step framework behind responsible gold — how the OECD guidance shapes refinery and LBMA sourcing rules.
+- [Responsible Gold Sourcing: How It Works](https://kaizengold.com/knowledge/responsible-gold-sourcing/): Origin you can prove — the practices and paperwork that make gold acceptable to refineries, banks and buyers.
+- [Sanctions Compliance for Precious Metals](https://kaizengold.com/knowledge/sanctions-compliance-for-precious-metals/): Listed parties, banned origins, blocked banks — the screening that must clear before any gold deal proceeds.
+
+## Contracts
+
+- [Gold Purchase Agreements: The Key Clauses](https://kaizengold.com/knowledge/gold-purchase-agreements-key-clauses/): The contract is the deal — quantity, pricing, assay rights, instruments and sequencing, clause by clause.
+
+## Gold Trading
+
+- [What Is Gold Doré?](https://kaizengold.com/knowledge/what-is-gold-dore/): Semi-pure gold bars produced at the mine — how doré is made, valued, shipped and refined to 999.9 purity.
+- [What Is a CIF Gold Transaction?](https://kaizengold.com/knowledge/what-is-a-cif-gold-transaction/): Cost, Insurance and Freight explained — who pays for what, where risk sits, and how CIF gold deals settle in Dubai.
+- [How International Gold Trading Works](https://kaizengold.com/knowledge/how-international-gold-trading-works/): From mine to vault — the participants, flows, pricing and settlement mechanics of the global gold trade.
+- [CIF vs FOB in Gold Transactions](https://kaizengold.com/knowledge/cif-vs-fob-gold-transactions/): Who carries the metal, who carries the risk — why most doré deals are CIF and what FOB shifts to the buyer.
+- [Gold Export Procedures Explained](https://kaizengold.com/knowledge/gold-export-procedures-explained/): Licences, permits, customs and secure freight — the documentation chain that moves gold across borders legally.
+- [What Is a Gold Off-Take Agreement?](https://kaizengold.com/knowledge/what-is-a-gold-off-take-agreement/): Long-term supply locked in — how producers and buyers contract future gold production at benchmark-linked prices.
+
+## Logistics
+
+- [How Gold Is Transported Securely](https://kaizengold.com/knowledge/how-gold-is-transported-securely/): Armoured trucks, valuables air freight, seals and insurance — the secure logistics behind every gold shipment.
+
+## Markets
+
+- [The Dubai Gold Market Explained](https://kaizengold.com/knowledge/the-dubai-gold-market-explained/): The City of Gold — why doré flows to Dubai and how the DMCC-anchored market actually functions.
+- [What Is a Bullion Bank?](https://kaizengold.com/knowledge/what-is-a-bullion-bank/): The institutions at the centre of the wholesale gold market — trading, clearing, vaulting, financing.
+
+## Pricing
+
+- [What Is LBMA Pricing?](https://kaizengold.com/knowledge/what-is-lbma-pricing/): The twice-daily London benchmark that international gold contracts price against — how it's set and applied.
+- [Spot, Futures and Physical Gold: How the Three Markets Connect](https://kaizengold.com/knowledge/spot-futures-and-physical-gold/): Three prices, one metal — how spot quotes, futures curves and physical premiums fit together.
+
+## Refining
+
+- [How Does a Gold Refinery Assay Work?](https://kaizengold.com/knowledge/how-does-a-gold-refinery-assay-work/): Melt, sample, fire assay — how refineries establish the exact gold content that determines what a seller is paid.
+- [What Is Fine Gold Content?](https://kaizengold.com/knowledge/what-is-fine-gold-content/): Gross weight × fineness = the number every settlement is built on. Fineness, karats and payable gold explained.
+- [How Gold Refineries Operate](https://kaizengold.com/knowledge/how-gold-refineries-operate/): Inside the refinery — receiving, assaying, Miller and Wohlwill refining, casting and settlement.
+- [Gold Refinery Due Diligence: A Practical Guide](https://kaizengold.com/knowledge/gold-refinery-due-diligence/): Checking the refinery — and what the refinery checks about you — before metal changes hands.
+- [The Gold Refinery Settlement Process](https://kaizengold.com/knowledge/gold-refinery-settlement-process/): From assay result to money in the bank — every step and deduction in a refinery settlement, worked through.
+- [Chain of Custody in Precious Metals](https://kaizengold.com/knowledge/chain-of-custody-in-precious-metals/): The unbroken paper trail from mine to refinery — seals, weights, signatures, and why gaps kill deals.
+
+## Risk
+
+- [Gold Trading Scams and Red Flags: A Field Guide](https://kaizengold.com/knowledge/gold-trading-scams-and-red-flags/): Below-market gold, leased SBLCs, stuck couriers — the recurring frauds and how legitimate deals differ.
+
+## Trade Finance
+
+- [What Is an MT700 DLC?](https://kaizengold.com/knowledge/what-is-an-mt700-dlc/): The SWIFT message that issues a documentary letter of credit — what it contains and how it secures payment in gold deals.
+- [DLC vs SBLC: What's the Difference?](https://kaizengold.com/knowledge/dlc-vs-sblc-explained/): Primary payment vs safety net — how documentary and standby letters of credit differ and when gold deals use each.
+- [What Is a Performance Bond in Gold Trading?](https://kaizengold.com/knowledge/what-is-a-performance-bond-in-gold-trading/): The seller-side guarantee — typically ~2% of contract value — that backs the obligation to deliver.
+- [How Gold Transactions Are Financed](https://kaizengold.com/knowledge/how-gold-transactions-are-financed/): Letters of credit, guarantees, prepayments and metal loans — the financial machinery behind physical gold deals.
+- [Trade Finance Instruments in Gold Trading](https://kaizengold.com/knowledge/trade-finance-instruments-in-gold-trading/): DLCs, SBLCs, guarantees, bonds and the SWIFT messages behind them — the full instrument toolkit, in one place.
+
+## Contact
+
+- Email: sat@kaizengold.com
+- Locations: London, UK & Dubai, UAE
