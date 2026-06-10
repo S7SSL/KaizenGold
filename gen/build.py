@@ -384,8 +384,10 @@ def patch_index(paths):
                 <li><a href="/faq/">FAQ</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>"""
-    assert old_nav in src, "nav anchor not found"
-    src = src.replace(old_nav, new_nav)
+    if old_nav in src:
+        src = src.replace(old_nav, new_nav)
+    elif new_nav not in src:
+        raise AssertionError("nav anchor not found")
     # 2. Organization + WebSite schema before </head>
     org = org_ref(); org["@context"] = "https://schema.org"
     org["contactPoint"] = {"@type": "ContactPoint", "email": EMAIL, "contactType": "sales"}
