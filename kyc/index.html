@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Kaizen Gold — Secure KYC &amp; Documentation Portal</title>
+<style>
+  :root{
+    --gold:#c8a24b; --gold-dark:#a6822f; --ink:#0e0e0e; --ink-2:#1c1c1c;
+    --paper:#fafafa; --line:#e6e6e6; --muted:#6b6b6b; --ok:#1f7a44; --err:#b22; --radius:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+  a{color:var(--gold-dark)}
+  header{background:var(--ink);color:#fff;padding:22px 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--gold)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .mark{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-weight:800;color:#111;font-size:18px}
+  .brand h1{font-size:18px;letter-spacing:.5px;font-weight:700}
+  .brand small{display:block;color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+  .lock{font-size:12px;color:#cfcfcf}
+  main{max-width:920px;margin:0 auto;padding:38px 6% 80px}
+  .hero{margin-bottom:26px}
+  .hero h2{font-size:26px;font-weight:800;margin-bottom:8px}
+  .hero p{color:var(--muted);max-width:60ch}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .tabs{display:flex;gap:8px;margin-bottom:18px}
+  .tab{flex:1;padding:11px;text-align:center;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-weight:600;color:var(--muted)}
+  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
+  .req{color:var(--err)}
+  input,select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:#fff;font-family:inherit}
+  input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,162,75,.15)}
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .row>div{flex:1;min-width:220px}
+  .btn{display:inline-block;width:100%;padding:13px;border:none;border-radius:8px;background:var(--gold);color:#111;font-weight:800;font-size:15px;cursor:pointer;margin-top:20px;letter-spacing:.3px}
+  .btn:hover{background:var(--gold-dark);color:#fff}
+  .btn.dark{background:var(--ink);color:#fff}
+  .hint{font-size:12px;color:var(--muted);margin-top:5px}
+  .note{font-size:13px;color:var(--muted);background:#fbf7ee;border:1px solid #efe2c4;border-radius:8px;padding:12px 14px;margin-top:14px}
+  .section-title{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-dark);font-weight:800;margin:26px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+  .section-sub{font-size:13px;color:var(--muted);margin-bottom:8px}
+  .doc{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .doc:last-child{border-bottom:none}
+  .doc .meta{flex:1;min-width:0}
+  .doc .name{font-weight:600;font-size:14.5px}
+  .doc .tag{display:inline-block;font-size:11px;font-weight:700;color:#7a5b12;background:#f4ead0;border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:middle}
+  .doc .desc{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .doc .file{flex:0 0 240px}
+  .doc input[type=file]{font-size:12.5px;padding:8px}
+  .hidden{display:none}
+  .msg{padding:12px 14px;border-radius:8px;font-size:14px;margin-bottom:14px;display:none}
+  .msg.show{display:block}
+  .msg.ok{background:#eaf6ef;color:var(--ok);border:1px solid #bfe3cc}
+  .msg.err{background:#fbeaea;color:var(--err);border:1px solid #efc4c4}
+  .who{background:var(--ink-2);color:#fff;border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:8px}
+  .who b{color:var(--gold)}
+  .linkbtn{background:none;border:none;color:var(--gold);cursor:pointer;font-weight:600;font-size:13px}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 6% 40px;border-top:1px solid var(--line)}
+  @media(max-width:640px){.doc{flex-direction:column}.doc .file{flex-basis:auto;width:100%}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="mark">KG</div>
+    <div><h1>KAIZEN GOLD</h1><small>Secure KYC &amp; Documentation Portal</small></div>
+  </div>
+  <div class="lock">🔒 Encrypted &amp; confidential</div>
+</header>
+
+<main>
+  <!-- ============ AUTH (register / login) ============ -->
+  <section id="authView">
+    <div class="hero">
+      <h2>Client KYC &amp; Documentation</h2>
+      <p>Register a secure account to upload your compliance and shipment documents. Each client's area is private and password-protected. All documents are transmitted over an encrypted connection and stored confidentially.</p>
+    </div>
+
+    <div class="card">
+      <div class="tabs">
+        <div class="tab active" id="tabRegister" onclick="showTab('register')">Create account</div>
+        <div class="tab" id="tabLogin" onclick="showTab('login')">Sign in</div>
+      </div>
+
+      <div id="msgAuth" class="msg"></div>
+
+      <!-- Register -->
+      <form id="registerForm">
+        <div class="row">
+          <div>
+            <label>Company / Entity name <span class="req">*</span></label>
+            <input name="company" required autocomplete="organization">
+          </div>
+          <div>
+            <label>Your role <span class="req">*</span></label>
+            <select name="role" required>
+              <option value="">Select…</option>
+              <option>Buyer</option><option>Seller</option><option>Miner</option>
+              <option>Exporter</option><option>Mandate / Intermediary</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label>Contact name <span class="req">*</span></label>
+            <input name="contact" required autocomplete="name">
+          </div>
+          <div>
+            <label>Country</label>
+            <input name="country" autocomplete="country-name">
+          </div>
+        </div>
+        <label>Email address <span class="req">*</span></label>
+        <input name="email" type="email" required autocomplete="email">
+        <div class="row">
+          <div>
+            <label>Create password <span class="req">*</span></label>
+            <input name="password" type="password" required minlength="8" autocomplete="new-password">
+            <div class="hint">Minimum 8 characters.</div>
+          </div>
+          <div>
+            <label>Confirm password <span class="req">*</span></label>
+            <input name="password2" type="password" required minlength="8" autocomplete="new-password">
+          </div>
+        </div>
+        <button class="btn" type="submit">Create secure account</button>
+        <div class="note">By registering you confirm the documents you provide are true, complete and lawfully held. Kaizen Gold processes this data solely for KYC / AML and trade-compliance purposes.</div>
+      </form>
+
+      <!-- Login -->
+      <form id="loginForm" class="hidden">
+        <label>Email address</label>
+        <input name="email" type="email" required autocomplete="email">
+        <label>Password</label>
+        <input name="password" type="password" required autocomplete="current-password">
+        <button class="btn dark" type="submit">Sign in</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ PORTAL (uploads) ============ -->
+  <section id="portalView" class="hidden">
+    <div class="who">
+      <div>Signed in as <b id="whoEmail">—</b> · <span id="whoCompany"></span></div>
+      <button class="linkbtn" onclick="signOut()">Sign out</button>
+    </div>
+
+    <div class="hero">
+      <h2>Upload your documents</h2>
+      <p>Attach a file to each applicable line. Accepted formats: PDF, JPG, PNG (max ~15&nbsp;MB each). You can return and add more at any time — saved items remain in your account.</p>
+    </div>
+
+    <div id="msgUpload" class="msg"></div>
+
+    <form id="uploadForm">
+      <div class="card">
+        <div class="section-title">1 · AML / KYC — Miner, Seller &amp; Exporter</div>
+        <div class="section-sub">Entity due-diligence documents.</div>
+        <div id="grpKyc"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">2 · Customs Export Documents</div>
+        <div class="section-sub">Required for the customs export of the gold.</div>
+        <div id="grpCustoms"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">3 · Shipment Documentation</div>
+        <div class="section-sub">Required to release and ship the consignment.</div>
+        <div id="grpShipment"></div>
+      </div>
+
+      <button class="btn" type="submit">Submit documents securely</button>
+      <div class="note">A confirmation will be emailed to you and to the Kaizen Gold compliance desk. Nothing is shared with third parties.</div>
+    </form>
+  </section>
+</main>
+
+<footer>
+  Kaizen Gold Ltd · Confidential KYC &amp; Trade Documentation Portal · All transfers encrypted (HTTPS).<br>
+  This area is restricted to registered clients.
+</footer>
+
+<script>
+/* ------------------------------------------------------------------
+   Kaizen Gold KYC portal — front-end only.
+   Connect to your backend by setting API_BASE below (e.g. a Cloudflare
+   Worker at https://api.kaizengold.com). Endpoints expected:
+     POST {API_BASE}/register   {company,role,contact,country,email,password}
+     POST {API_BASE}/login      {email,password}  -> returns a session token
+     POST {API_BASE}/upload     multipart/form-data (token + files)
+   Until a backend is connected the forms run in DEMO mode (no data leaves
+   the browser) so the layout can be reviewed.
+------------------------------------------------------------------- */
+const API_BASE = "https://kaizengold-kyc-api.kaizengold.workers.dev"; // <-- set to your Worker URL to go live. Empty = demo mode.
+
+const DOCS = {
+  grpKyc: [
+    {name:"Certificate of Incorporation"},
+    {name:"Business Registration"},
+    {name:"Registry Extract"},
+    {name:"MOA / Statutes / Constitution"},
+    {name:"Tax Registration Certificate"},
+    {name:"Mining License"},
+    {name:"Export License"},
+    {name:"Ultimate Beneficial Owner (UBO) — Passport &amp; ID copies", multiple:true, desc:"Passport and ID copies for each beneficial owner."}
+  ],
+  grpCustoms: [
+    {name:"Commercial Invoice", tag:"In Buyer's name", desc:"3 originals.", multiple:true},
+    {name:"Certificate of Origin", tag:"In Buyer's name", desc:"1 original."},
+    {name:"Customs Declaration Certificate", tag:"In Seller's name", desc:"1 original."},
+    {name:"Original Assay Report", tag:"In Buyer's name", desc:"1 original."},
+    {name:"Certificate of Movement", tag:"In Buyer's name", desc:"Declaring the gold is free, clear, of non-criminal origin, un-encumbered, free from liens, transferable and exportable to final destination."},
+    {name:"Title / Ownership of the Gold", tag:"In Seller's name"},
+    {name:"ICGLR Certificate", tag:"In Buyer's name", desc:"International Conference on the Great Lakes Region — confirms no child labour and that the product is conflict-free (not blood/conflict gold)."},
+    {name:"Certificate of Insurance", tag:"In Buyer's name"},
+    {name:"Packing List", tag:"In Buyer's name"}
+  ],
+  grpShipment: [
+    {name:"Certificate of Origin"},
+    {name:"Ownership Document"},
+    {name:"Insurance"},
+    {name:"Commercial Invoice"},
+    {name:"Customs Declaration", desc:"Confirming taxes and all other duties have been paid in full."},
+    {name:"Release Order"},
+    {name:"Airway Bill"},
+    {name:"Certificate of Assay Report"}
+  ]
+};
+
+function slug(s){return s.replace(/<[^>]+>/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+function buildDocs(){
+  for(const grp in DOCS){
+    const el=document.getElementById(grp);
+    el.innerHTML=DOCS[grp].map(d=>{
+      const id=grp+'__'+slug(d.name);
+      return `<div class="doc">
+        <div class="meta">
+          <div class="name">${d.name}${d.tag?`<span class="tag">${d.tag}</span>`:''}</div>
+          ${d.desc?`<div class="desc">${d.desc}</div>`:''}
+        </div>
+        <div class="file"><input type="file" name="${id}" accept=".pdf,.jpg,.jpeg,.png"${d.multiple?' multiple':''}></div>
+      </div>`;
+    }).join('');
+  }
+}
+buildDocs();
+
+/* ---------- tabs ---------- */
+function showTab(which){
+  document.getElementById('tabRegister').classList.toggle('active',which==='register');
+  document.getElementById('tabLogin').classList.toggle('active',which==='login');
+  document.getElementById('registerForm').classList.toggle('hidden',which!=='register');
+  document.getElementById('loginForm').classList.toggle('hidden',which!=='login');
+  msg('msgAuth','');
+}
+function msg(id,text,type){const m=document.getElementById(id);m.textContent=text;m.className='msg'+(text?(' show '+(type||'ok')):'');}
+
+/* ---------- session ---------- */
+let SESSION=null;
+function enterPortal(email,company){
+  SESSION={email,company};
+  document.getElementById('whoEmail').textContent=email;
+  document.getElementById('whoCompany').textContent=company||'';
+  document.getElementById('authView').classList.add('hidden');
+  document.getElementById('portalView').classList.remove('hidden');
+  window.scrollTo(0,0);
+}
+function signOut(){SESSION=null;document.getElementById('portalView').classList.add('hidden');document.getElementById('authView').classList.remove('hidden');}
+
+/* ---------- register ---------- */
+document.getElementById('registerForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const f=new FormData(e.target), d=Object.fromEntries(f);
+  if(d.password!==d.password2){msg('msgAuth','Passwords do not match.','err');return;}
+  if(!API_BASE){msg('msgAuth','Demo mode: account would be created for '+d.email+'. (Connect the backend to go live.)','ok');setTimeout(()=>enterPortal(d.email,d.company),900);return;}
+  try{
+    const r=await fetch(API_BASE+'/register',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    if(!r.ok)throw new Error((await r.json().catch(()=>({}))).error||'Registration failed');
+    msg('msgAuth','Account created. You can now sign in.','ok');showTab('login');
+  }catch(err){msg('msgAuth',err.message,'err');}
+});
+
+/* ---------- login ---------- */
+document.getElementById('loginForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(e.target));
+  if(!API_BASE){msg('msgAuth','Demo mode: signed in as '+d.email+'.','ok');setTimeout(()=>enterPortal(d.email,''),700);return;}
+  try{
+    const r=await fetch(API_BASE+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    if(!r.ok)throw new Error('Invalid email or password');
+    const j=await r.json();SESSION={token:j.token};enterPortal(d.email,j.company||'');
+  }catch(err){msg('msgAuth',err.message,'err');}
+});
+
+/* ---------- upload ---------- */
+document.getElementById('uploadForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  let count=0;for(const[,v] of fd.entries()){if(v instanceof File && v.size>0)count++;}
+  if(count===0){msg('msgUpload','Please attach at least one document before submitting.','err');return;}
+  if(!API_BASE){msg('msgUpload','Demo mode: '+count+' file(s) ready to upload. Connect the backend to store them securely.','ok');return;}
+  try{
+    fd.append('email',SESSION.email||'');
+    const r=await fetch(API_BASE+'/upload',{method:'POST',headers:SESSION.token?{'Authorization':'Bearer '+SESSION.token}:{},body:fd});
+    if(!r.ok)throw new Error('Upload failed — please try again');
+    msg('msgUpload','Documents submitted securely. A confirmation has been emailed to you.','ok');
+    e.target.reset();
+  }catch(err){msg('msgUpload',err.message,'err');}
+});
+</script>
+</body>
+</html>
