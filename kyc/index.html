@@ -5,58 +5,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Kaizen Gold — Secure KYC &amp; Documentation Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --gold:#c8a24b; --gold-dark:#a6822f; --ink:#0e0e0e; --ink-2:#1c1c1c;
-    --paper:#fafafa; --line:#e6e6e6; --muted:#6b6b6b; --ok:#1f7a44; --err:#b22; --radius:12px;
+    --black:#0a0a0a; --black-light:#111111; --card-bg:#161616; --border:#222222;
+    --gold:#e8a828; --gold-bright:#ffb830; --gold-light:#f5c342; --gold-dark:#c48a1a;
+    --text-primary:#ffffff; --text-secondary:#b0b0b0;
+    --ok:#4fd18b; --err:#ff6b6b;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
-  a{color:var(--gold-dark)}
-  header{background:var(--ink);color:#fff;padding:22px 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--gold)}
-  .brand{display:flex;align-items:center;gap:12px}
-  .brand .mark{width:38px;height:38px;border-radius:8px;background:linear-gradient(135deg,var(--gold),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-weight:800;color:#111;font-size:18px}
-  .brand h1{font-size:18px;letter-spacing:.5px;font-weight:700}
-  .brand small{display:block;color:var(--gold);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:600}
-  .lock{font-size:12px;color:#cfcfcf}
-  main{max-width:920px;margin:0 auto;padding:38px 6% 80px}
-  .hero{margin-bottom:26px}
-  .hero h2{font-size:26px;font-weight:800;margin-bottom:8px}
-  .hero p{color:var(--muted);max-width:60ch}
-  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;margin-bottom:22px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-  .tabs{display:flex;gap:8px;margin-bottom:18px}
-  .tab{flex:1;padding:11px;text-align:center;border:1px solid var(--line);border-radius:8px;background:#fff;cursor:pointer;font-weight:600;color:var(--muted)}
-  .tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-  label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
-  .req{color:var(--err)}
-  input,select{width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;font-size:15px;background:#fff;font-family:inherit}
-  input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,162,75,.15)}
+  body{font-family:'Poppins',sans-serif;background:var(--black);color:var(--text-primary);line-height:1.6}
+  a{color:var(--gold);text-decoration:none}
+  a:hover{color:var(--gold-bright)}
+  header{background:var(--black-light);color:var(--text-primary);padding:22px 6%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand .mark{width:38px;height:38px;background:linear-gradient(135deg,var(--gold-light),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;color:var(--black);font-size:18px;letter-spacing:1px}
+  .brand h1{font-family:'DM Serif Display',serif;font-size:20px;letter-spacing:3px;font-weight:400;text-transform:uppercase;color:var(--gold)}
+  .brand small{display:block;color:var(--text-secondary);font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+  .lock{font-size:12px;color:var(--text-secondary);letter-spacing:.5px}
+  main{max-width:920px;margin:0 auto;padding:48px 6% 80px}
+  .hero{margin-bottom:30px}
+  .hero h2{font-family:'DM Serif Display',serif;font-size:32px;font-weight:400;margin-bottom:10px;line-height:1.2}
+  .hero p{color:var(--text-secondary);max-width:60ch;font-weight:300}
+  .card{background:var(--card-bg);border:1px solid var(--border);padding:30px;margin-bottom:22px}
+  .tabs{display:flex;gap:8px;margin-bottom:22px}
+  .tab{flex:1;padding:13px;text-align:center;border:1px solid var(--border);background:var(--black-light);cursor:pointer;font-weight:500;color:var(--text-secondary);letter-spacing:1px;text-transform:uppercase;font-size:13px;transition:all .3s ease}
+  .tab.active{background:var(--gold);color:var(--black);border-color:var(--gold)}
+  label{display:block;font-size:13px;font-weight:500;margin:16px 0 6px;color:var(--text-primary)}
+  .req{color:var(--gold)}
+  input,select{width:100%;padding:12px 14px;border:1px solid var(--border);background:var(--black-light);color:var(--text-primary);font-size:15px;font-family:inherit;font-weight:300}
+  select option{background:var(--black-light);color:var(--text-primary)}
+  input:focus,select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,168,40,.18)}
   .row{display:flex;gap:14px;flex-wrap:wrap}
   .row>div{flex:1;min-width:220px}
-  .btn{display:inline-block;width:100%;padding:13px;border:none;border-radius:8px;background:var(--gold);color:#111;font-weight:800;font-size:15px;cursor:pointer;margin-top:20px;letter-spacing:.3px}
-  .btn:hover{background:var(--gold-dark);color:#fff}
-  .btn.dark{background:var(--ink);color:#fff}
-  .hint{font-size:12px;color:var(--muted);margin-top:5px}
-  .note{font-size:13px;color:var(--muted);background:#fbf7ee;border:1px solid #efe2c4;border-radius:8px;padding:12px 14px;margin-top:14px}
-  .section-title{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold-dark);font-weight:800;margin:26px 0 4px;padding-bottom:8px;border-bottom:2px solid var(--line)}
-  .section-sub{font-size:13px;color:var(--muted);margin-bottom:8px}
-  .doc{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .btn{display:inline-block;width:100%;padding:14px;border:none;background:var(--gold);color:var(--black);font-family:'Poppins',sans-serif;font-weight:600;font-size:14px;cursor:pointer;margin-top:22px;letter-spacing:1px;text-transform:uppercase;transition:all .3s ease}
+  .btn:hover{background:var(--gold-bright);color:var(--black)}
+  .btn.dark{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+  .btn.dark:hover{background:var(--gold);color:var(--black)}
+  .hint{font-size:12px;color:var(--text-secondary);margin-top:5px;font-weight:300}
+  .note{font-size:13px;color:var(--text-secondary);background:var(--black-light);border:1px solid var(--border);border-left:3px solid var(--gold);padding:13px 16px;margin-top:16px;font-weight:300}
+  .section-title{font-family:'DM Serif Display',serif;font-size:18px;letter-spacing:.5px;color:var(--gold-light);font-weight:400;margin:0 0 4px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+  .section-sub{font-size:13px;color:var(--text-secondary);margin:10px 0 8px;font-weight:300}
+  .doc{display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid var(--border)}
   .doc:last-child{border-bottom:none}
   .doc .meta{flex:1;min-width:0}
-  .doc .name{font-weight:600;font-size:14.5px}
-  .doc .tag{display:inline-block;font-size:11px;font-weight:700;color:#7a5b12;background:#f4ead0;border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:middle}
-  .doc .desc{font-size:12.5px;color:var(--muted);margin-top:2px}
+  .doc .name{font-weight:500;font-size:14.5px;color:var(--text-primary)}
+  .doc .tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gold);background:rgba(232,168,40,.12);border:1px solid rgba(232,168,40,.3);padding:3px 9px;margin-left:8px;vertical-align:middle}
+  .doc .desc{font-size:12.5px;color:var(--text-secondary);margin-top:3px;font-weight:300}
   .doc .file{flex:0 0 240px}
-  .doc input[type=file]{font-size:12.5px;padding:8px}
+  .doc input[type=file]{font-size:12.5px;padding:9px;font-weight:300}
+  .doc input[type=file]::-webkit-file-upload-button{background:var(--gold);color:var(--black);border:none;padding:7px 12px;margin-right:10px;font-family:'Poppins',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
+  .doc input[type=file]::file-selector-button{background:var(--gold);color:var(--black);border:none;padding:7px 12px;margin-right:10px;font-family:'Poppins',sans-serif;font-weight:600;font-size:11px;letter-spacing:.5px;text-transform:uppercase;cursor:pointer}
   .hidden{display:none}
-  .msg{padding:12px 14px;border-radius:8px;font-size:14px;margin-bottom:14px;display:none}
+  .msg{padding:12px 16px;font-size:14px;margin-bottom:16px;display:none;font-weight:300}
   .msg.show{display:block}
-  .msg.ok{background:#eaf6ef;color:var(--ok);border:1px solid #bfe3cc}
-  .msg.err{background:#fbeaea;color:var(--err);border:1px solid #efc4c4}
-  .who{background:var(--ink-2);color:#fff;border-radius:10px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:8px}
-  .who b{color:var(--gold)}
-  .linkbtn{background:none;border:none;color:var(--gold);cursor:pointer;font-weight:600;font-size:13px}
-  footer{text-align:center;color:var(--muted);font-size:12px;padding:24px 6% 40px;border-top:1px solid var(--line)}
+  .msg.ok{background:rgba(79,209,139,.1);color:var(--ok);border:1px solid rgba(79,209,139,.35)}
+  .msg.err{background:rgba(255,107,107,.1);color:var(--err);border:1px solid rgba(255,107,107,.35)}
+  .who{background:var(--black-light);color:var(--text-primary);border:1px solid var(--border);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:8px;font-weight:300}
+  .who b{color:var(--gold);font-weight:500}
+  .linkbtn{background:none;border:none;color:var(--gold);cursor:pointer;font-family:'Poppins',sans-serif;font-weight:500;font-size:13px;letter-spacing:.5px;text-transform:uppercase}
+  .linkbtn:hover{color:var(--gold-bright)}
+  footer{text-align:center;color:var(--text-secondary);font-size:12px;padding:28px 6% 40px;border-top:1px solid var(--border);font-weight:300}
   @media(max-width:640px){.doc{flex-direction:column}.doc .file{flex-basis:auto;width:100%}}
 </style>
 </head>
