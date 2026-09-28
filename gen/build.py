@@ -10,7 +10,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://kaizengold.com"
 TODAY = "2026-06-10"          # original publication date of the knowledge centre
 SITE_UPDATED = "2026-09-28"   # home/about content last changed (company disclosure, entity schema)
-EMAIL = "sat@kaizengold.com"
+EMAIL = "hi@kaizengold.com"
 LEGAL_NAME = "KAIZEN GOLD LTD"
 COMPANY_NO = "14518346"
 CH_URL = "https://find-and-update.company-information.service.gov.uk/company/14518346"
@@ -102,7 +102,7 @@ FOOTER = """
   <div class="footer-grid">
     <div>
       <h4>Kaizen Gold</h4>
-      <p>Specialist broker for dor&eacute; and bullion gold transactions, working with a leading UAE refinery. Banking instruments issued on a guaranteed CIF basis to Dubai.</p>
+      <p>Specialist broker for dor&eacute; and bullion gold transactions, working with a premier UAE refinery. Banking instruments issued on a guaranteed CIF basis to Dubai.</p>
       <p>London, UK &amp; Dubai, UAE</p>
       <a href="mailto:__EMAIL__">__EMAIL__</a>
     </div>
@@ -208,7 +208,7 @@ def org_full():
             "contactPoint": {"@type": "ContactPoint", "email": EMAIL, "contactType": "sales",
                              "areaServed": ["GB", "AE"], "availableLanguage": "en"},
             "email": EMAIL,
-            "description": "Specialist broker for doré and bullion gold transactions, partnered with a leading UAE refinery. Banking instruments issued on a guaranteed CIF basis to Dubai.",
+            "description": "Specialist broker for doré and bullion gold transactions, partnered with a premier UAE refinery. Banking instruments issued on a guaranteed CIF basis to Dubai.",
             "areaServed": ["GB", "AE"],
             "location": [{"@type": "Place", "name": "London, United Kingdom"},
                          {"@type": "Place", "name": "Dubai, United Arab Emirates"}],
@@ -275,7 +275,7 @@ def render_article(mod, all_mods):
 <div class="related"><h2>Related Reading</h2><div class="card-grid">{related}</div></div>
 <div class="cta-band">
 <h2>Speak to Kaizen Gold</h2>
-<p>Kaizen Gold facilitates dor&eacute; and bullion gold transactions through a leading UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai.</p>
+<p>Kaizen Gold facilitates dor&eacute; and bullion gold transactions through a premier UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai.</p>
 <a class="btn-gold" href="/#contact">Get in Touch</a>
 </div>"""
     schemas = [org_full(), article_schema(mod, path), faq_schema(mod.FAQS),
@@ -349,10 +349,10 @@ def render_about():
 <div class="page-label">About Us</div>
 <h1>About Kaizen Gold</h1>
 <article>
-<p class="lead"><strong>Kaizen Gold is a specialist precious metals brokerage</strong> facilitating dor&eacute; and bullion gold transactions between sellers and a leading refinery in the United Arab Emirates. The firm operates from London, United Kingdom and Dubai, United Arab Emirates, and structures transactions on a guaranteed CIF (Cost, Insurance and Freight) basis with delivery exclusively to Dubai.</p>
+<p class="lead"><strong>Kaizen Gold is a specialist precious metals brokerage</strong> facilitating dor&eacute; and bullion gold transactions between sellers and a premier refinery in the United Arab Emirates. The firm operates from London, United Kingdom and Dubai, United Arab Emirates, and structures transactions on a guaranteed CIF (Cost, Insurance and Freight) basis with delivery exclusively to Dubai.</p>
 
 <h2>What Kaizen Gold Does</h2>
-<p>Kaizen Gold acts as a facilitator &mdash; the connecting party between gold suppliers and a top-tier UAE refinery. The firm's role covers three core activities:</p>
+<p>Kaizen Gold acts as a facilitator &mdash; the connecting party between gold suppliers and a premier UAE refinery. The firm's role covers three core activities:</p>
 <ul>
 <li><strong>Dor&eacute; gold facilitation.</strong> Arranging the sale and delivery of semi-pure <a href="/knowledge/what-is-gold-dore/">dor&eacute; gold</a> sourced through verified supply chains, refined at the partner refinery to internationally recognised purity standards.</li>
 <li><strong>Bullion gold brokerage.</strong> Brokering refined gold bullion bars, fully assayed and certified, for institutional buyers and high-net-worth individuals seeking physical gold allocation.</li>
@@ -385,12 +385,12 @@ def render_about():
     org = org_full()
     schemas = [org, {"@context": "https://schema.org", "@type": "AboutPage",
                 "name": "About Kaizen Gold", "url": SITE + "/about/",
-                "description": "Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a leading UAE refinery on a guaranteed CIF basis to Dubai.",
+                "description": "Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a premier UAE refinery on a guaranteed CIF basis to Dubai.",
                 "mainEntity": org_ref()},
                breadcrumb_schema([("Home", "/"), ("About", "/about/")])]
     write("about/index.html",
           page("/about/", "About Kaizen Gold — Specialist Gold Brokerage | London & Dubai",
-               "Kaizen Gold facilitates doré and bullion gold transactions through a leading UAE refinery, issuing banking instruments on a guaranteed CIF basis to Dubai.",
+               "Kaizen Gold facilitates doré and bullion gold transactions through a premier UAE refinery, issuing banking instruments on a guaranteed CIF basis to Dubai.",
                body, schemas, active="/about/"))
 
 
@@ -519,7 +519,7 @@ def render_llms(mods):
     for m in mods:
         by_cat.setdefault(m.CATEGORY, []).append(m)
     lines = ["# Kaizen Gold", "",
-             "> Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a leading UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai. Operating from London, UK and Dubai, UAE.",
+             "> Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a premier UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai. Operating from London, UK and Dubai, UAE.",
              "",
              "Kaizen Gold publishes a Gold Trading Knowledge Centre: practical, expert explanations of international gold transactions — doré, refinery assays, CIF delivery, documentary letters of credit, LBMA pricing, compliance and the Dubai market.",
              "",

@@ -21,7 +21,7 @@ Content lives in `gen/content/*.py`. Run `python3 gen/build.py && python3 gen/se
 Set `MODIFIED = "YYYY-MM-DD"` in an article module when its content really changes, so dates stay honest.
 
 ## Still open (owner)
-1. Name the UAE refinery partner and its accreditation, or drop "leading/premier" (claims register).
+1. ~~Refinery wording~~: resolved, "premier UAE refinery", unnamed.
 2. Consider a named expert author (Person schema) for the Knowledge Centre — strongest E-E-A-T signal for a financial-adjacent topic.
 3. Add sources to Knowledge Centre articles on the next content pass.
-4. The contact form posts to a Formspree placeholder and falls back to email; wire a real endpoint or remove the form.
+4. ~~Contact form~~: resolved, email only to hi@kaizengold.com (form opens a pre-filled email; Formspree placeholder removed).
