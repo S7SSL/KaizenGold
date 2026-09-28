@@ -1,7 +1,7 @@
 SLUG = "spot-futures-and-physical-gold"
 TITLE = "Spot, Futures and Physical Gold: How the Three Markets Connect"
 CATEGORY = "Pricing"
-DESC = "Spot is the price for immediate settlement, futures are exchange contracts for later delivery, and physical is real metal with premiums and logistics. How the three interlock."
+DESC = "Spot is immediate settlement, futures are exchange contracts for later delivery, physical is real metal with premiums. How the three interlock."
 CARD = "Three prices, one metal — how spot quotes, futures curves and physical premiums fit together."
 ABOUT = ["Gold spot price", "Gold futures", "Physical gold market"]
 RELATED = ["what-is-lbma-pricing", "how-international-gold-trading-works", "gold-refinery-settlement-process"]
@@ -56,3 +56,4 @@ FAQS = [
     ("Should a doré seller hedge between shipment and pricing?",
      "It depends on the pricing clause and risk appetite. If the contract prices at a future assay date, the seller carries market risk until then and can hedge it with futures or forwards — a deliberate commercial decision, ideally made before shipment."),
 ]
+SEO_TITLE = "Spot, Futures and Physical Gold Explained | Kaizen Gold"

@@ -1,7 +1,7 @@
 SLUG = "what-is-a-cif-gold-transaction"
 TITLE = "What Is a CIF Gold Transaction?"
 CATEGORY = "Gold Trading"
-DESC = "In a CIF gold transaction the seller pays the cost, insurance and freight to deliver gold to the named destination — commonly Dubai. Learn how CIF works, who carries which risk, and how settlement happens."
+DESC = "In a CIF gold deal the seller pays cost, insurance and freight to the destination, commonly Dubai. Who carries which risk, and how settlement works."
 CARD = "Cost, Insurance and Freight explained — who pays for what, where risk sits, and how CIF gold deals settle in Dubai."
 ABOUT = ["CIF", "Incoterms", "Gold trading", "Gold logistics"]
 RELATED = ["what-is-gold-dore", "what-is-an-mt700-dlc", "how-does-a-gold-refinery-assay-work"]

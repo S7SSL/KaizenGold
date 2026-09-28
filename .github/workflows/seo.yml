@@ -1,0 +1,26 @@
+name: SEO check + IndexNow
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Generated files are up to date
+        run: |
+          python3 gen/build.py > /dev/null
+          git diff --exit-code || (echo "::error::Run python3 gen/build.py and commit the output" && exit 1)
+      - name: SEO / AEO lint
+        run: python3 gen/seo_check.py
+      - name: Ping IndexNow
+        if: github.event_name == 'push'
+        run: |
+          sleep 90   # give GitHub Pages time to publish
+          python3 gen/indexnow.py "${{ github.event.before }}" "${{ github.sha }}"

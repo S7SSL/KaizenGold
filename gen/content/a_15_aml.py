@@ -1,7 +1,7 @@
 SLUG = "gold-aml-requirements"
 TITLE = "Gold AML Requirements Explained"
 CATEGORY = "Compliance"
-DESC = "Precious metals dealers face anti-money laundering obligations: customer due diligence, transaction monitoring, suspicious activity reporting and record-keeping. What AML means in gold trading."
+DESC = "Gold dealers' anti-money laundering duties: customer due diligence, transaction monitoring, suspicious activity reports and record-keeping."
 CARD = "Why gold is a high-risk sector for money laundering and what dealers must do: CDD, monitoring, reporting, records."
 ABOUT = ["Anti-money laundering", "AML", "Precious metals compliance"]
 RELATED = ["kyc-procedures-in-precious-metals", "sanctions-compliance-for-precious-metals", "responsible-gold-sourcing"]

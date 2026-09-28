@@ -1,7 +1,7 @@
 SLUG = "how-gold-transactions-are-financed"
 TITLE = "How Gold Transactions Are Financed"
 CATEGORY = "Trade Finance"
-DESC = "Gold transactions are financed through documentary letters of credit, guarantees, prepayment structures and inventory finance. How the money side of physical gold deals actually works."
+DESC = "Gold deals are financed with letters of credit, guarantees, prepayment and inventory finance. How the money side of physical gold works."
 CARD = "Letters of credit, guarantees, prepayments and metal loans — the financial machinery behind physical gold deals."
 ABOUT = ["Trade finance", "Gold financing", "Letters of credit"]
 RELATED = ["what-is-an-mt700-dlc", "trade-finance-instruments-in-gold-trading", "what-is-a-gold-off-take-agreement"]

@@ -1,7 +1,7 @@
 SLUG = "what-is-a-bullion-bank"
 TITLE = "What Is a Bullion Bank?"
 CATEGORY = "Markets"
-DESC = "A bullion bank is a bank active in wholesale precious metals — trading, financing, clearing, vaulting and hedging gold for institutional clients. What they do and why they matter."
+DESC = "A bullion bank trades, finances, clears, vaults and hedges precious metals for institutions. What bullion banks do and why they matter in gold."
 CARD = "The institutions at the centre of the wholesale gold market — trading, clearing, vaulting, financing."
 ABOUT = ["Bullion bank", "Gold market structure", "Precious metals banking"]
 RELATED = ["what-is-lbma-pricing", "spot-futures-and-physical-gold", "how-gold-transactions-are-financed"]

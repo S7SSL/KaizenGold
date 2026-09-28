@@ -1,7 +1,7 @@
 SLUG = "what-is-an-mt700-dlc"
 TITLE = "What Is an MT700 DLC?"
 CATEGORY = "Trade Finance"
-DESC = "An MT700 is the SWIFT message a bank uses to issue a documentary letter of credit (DLC). Learn what the MT700 contains, how a DLC secures gold transactions, and how payment is triggered."
+DESC = "An MT700 is the SWIFT message a bank uses to issue a documentary letter of credit. What it contains and how a DLC secures a gold deal."
 CARD = "The SWIFT message that issues a documentary letter of credit — what it contains and how it secures payment in gold deals."
 ABOUT = ["MT700", "Documentary letter of credit", "SWIFT", "Trade finance"]
 RELATED = ["dlc-vs-sblc-explained", "what-is-a-performance-bond-in-gold-trading", "what-is-a-cif-gold-transaction"]

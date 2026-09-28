@@ -1,7 +1,7 @@
 SLUG = "cif-vs-fob-gold-transactions"
 TITLE = "CIF vs FOB in Gold Transactions"
 CATEGORY = "Gold Trading"
-DESC = "CIF means the seller pays insured delivery to destination; FOB means the buyer takes over at origin. Learn which basis suits gold deals and why CIF dominates doré trade."
+DESC = "CIF: the seller pays insured delivery to destination. FOB: the buyer takes over at origin. Which suits gold deals, and why CIF dominates doré."
 CARD = "Who carries the metal, who carries the risk — why most doré deals are CIF and what FOB shifts to the buyer."
 ABOUT = ["CIF", "FOB", "Incoterms", "Gold logistics"]
 RELATED = ["what-is-a-cif-gold-transaction", "gold-export-procedures-explained", "how-international-gold-trading-works"]

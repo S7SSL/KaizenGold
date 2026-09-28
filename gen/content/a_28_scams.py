@@ -1,7 +1,7 @@
 SLUG = "gold-trading-scams-and-red-flags"
 TITLE = "Gold Trading Scams and Red Flags: A Field Guide"
 CATEGORY = "Risk"
-DESC = "The recurring frauds in international gold trading — fake sellers, advance fees, instrument scams, courier stings — and the red flags that identify them before money moves."
+DESC = "The recurring frauds in international gold trading (fake sellers, advance fees, instrument scams) and the red flags that expose them early."
 CARD = "Below-market gold, leased SBLCs, stuck couriers — the recurring frauds and how legitimate deals differ."
 ABOUT = ["Gold fraud", "Advance fee fraud", "Trade finance fraud"]
 RELATED = ["trade-finance-instruments-in-gold-trading", "kyc-procedures-in-precious-metals", "how-international-gold-trading-works"]

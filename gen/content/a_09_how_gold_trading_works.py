@@ -1,7 +1,7 @@
 SLUG = "how-international-gold-trading-works"
 TITLE = "How International Gold Trading Works"
 CATEGORY = "Gold Trading"
-DESC = "International gold trading moves metal from mines through refineries to banks and investors, priced against the LBMA benchmark and settled through documentary instruments. A complete overview."
+DESC = "How gold moves from mines through refineries to banks and investors, priced against the LBMA benchmark and settled by documentary instruments."
 CARD = "From mine to vault — the participants, flows, pricing and settlement mechanics of the global gold trade."
 ABOUT = ["Gold trading", "Gold supply chain", "Precious metals markets"]
 RELATED = ["what-is-gold-dore", "what-is-a-cif-gold-transaction", "how-gold-transactions-are-financed"]

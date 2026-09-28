@@ -1,7 +1,7 @@
 SLUG = "what-is-a-performance-bond-in-gold-trading"
 TITLE = "What Is a Performance Bond in Gold Trading?"
 CATEGORY = "Trade Finance"
-DESC = "A performance bond is a bank-issued guarantee — commonly around 2% of contract value — that compensates the buyer if the seller fails to deliver gold as contracted. Learn how it works."
+DESC = "A performance bond is a bank guarantee, often around 2% of contract value, paid to the buyer if gold is not delivered. How it works."
 CARD = "The seller-side guarantee — typically ~2% of contract value — that backs the obligation to deliver."
 ABOUT = ["Performance bond", "Bank guarantee", "Gold trading", "Trade finance"]
 RELATED = ["dlc-vs-sblc-explained", "what-is-an-mt700-dlc", "what-is-a-cif-gold-transaction"]

@@ -1,7 +1,7 @@
 SLUG = "sanctions-compliance-for-precious-metals"
 TITLE = "Sanctions Compliance for Precious Metals"
 CATEGORY = "Compliance"
-DESC = "Sanctions regimes prohibit dealing with listed parties, banks and origins — including specific bans on gold of certain origins. How sanctions screening works in gold transactions."
+DESC = "Sanctions ban dealing with listed parties, banks and some gold origins. How sanctions screening works in international gold transactions."
 CARD = "Listed parties, banned origins, blocked banks — the screening that must clear before any gold deal proceeds."
 ABOUT = ["Sanctions", "Sanctions screening", "Precious metals compliance"]
 RELATED = ["gold-aml-requirements", "kyc-procedures-in-precious-metals", "responsible-gold-sourcing"]

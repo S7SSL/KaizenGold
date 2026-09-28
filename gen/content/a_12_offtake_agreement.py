@@ -1,7 +1,7 @@
 SLUG = "what-is-a-gold-off-take-agreement"
 TITLE = "What Is a Gold Off-Take Agreement?"
 CATEGORY = "Gold Trading"
-DESC = "A gold off-take agreement is a long-term contract committing a buyer to purchase a producer's future output, usually at a formula price referencing the LBMA benchmark. How off-takes work."
+DESC = "A gold off-take commits a buyer to purchase a producer's future output, usually at a formula price linked to the LBMA benchmark. How it works."
 CARD = "Long-term supply locked in — how producers and buyers contract future gold production at benchmark-linked prices."
 ABOUT = ["Off-take agreement", "Gold supply contracts", "Gold trading"]
 RELATED = ["how-international-gold-trading-works", "what-is-lbma-pricing", "dlc-vs-sblc-explained"]

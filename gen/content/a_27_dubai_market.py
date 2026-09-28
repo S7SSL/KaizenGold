@@ -1,7 +1,7 @@
 SLUG = "the-dubai-gold-market-explained"
 TITLE = "The Dubai Gold Market Explained"
 CATEGORY = "Markets"
-DESC = "Why Dubai is one of the world's largest physical gold hubs: DMCC infrastructure, refining capacity, kilobar demand, customs procedures and its role as a CIF settlement venue."
+DESC = "Why Dubai is a leading physical gold hub: DMCC infrastructure, refining capacity, kilobar demand, customs procedures and CIF settlement."
 CARD = "The City of Gold — why doré flows to Dubai and how the DMCC-anchored market actually functions."
 ABOUT = ["Dubai gold market", "DMCC", "Gold trading hubs"]
 RELATED = ["what-is-a-cif-gold-transaction", "how-gold-refineries-operate", "how-international-gold-trading-works"]

@@ -1,7 +1,7 @@
 SLUG = "kyc-procedures-in-precious-metals"
 TITLE = "KYC Procedures in Precious Metals"
 CATEGORY = "Compliance"
-DESC = "KYC in precious metals means verifying the identity, ownership, licences and legitimacy of every party before transacting. What documents are exchanged and how verification works."
+DESC = "KYC in precious metals: verifying identity, ownership, licences and legitimacy of every party before a deal. Documents exchanged and checks made."
 CARD = "Who you're really dealing with — the identity, ownership and licensing checks that precede every legitimate gold deal."
 ABOUT = ["KYC", "Know your customer", "Precious metals compliance"]
 RELATED = ["gold-aml-requirements", "gold-refinery-due-diligence", "sanctions-compliance-for-precious-metals"]

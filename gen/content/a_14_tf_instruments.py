@@ -1,7 +1,7 @@
 SLUG = "trade-finance-instruments-in-gold-trading"
 TITLE = "Trade Finance Instruments in Gold Trading"
 CATEGORY = "Trade Finance"
-DESC = "A reference guide to the instruments used in gold transactions — documentary credits, standbys, demand guarantees, performance bonds and the SWIFT messages that carry them."
+DESC = "A reference guide to gold trade finance: documentary credits, standbys, demand guarantees, performance bonds and the SWIFT messages behind them."
 CARD = "DLCs, SBLCs, guarantees, bonds and the SWIFT messages behind them — the full instrument toolkit, in one place."
 ABOUT = ["Trade finance instruments", "Letters of credit", "Bank guarantees", "SWIFT"]
 RELATED = ["what-is-an-mt700-dlc", "dlc-vs-sblc-explained", "what-is-a-performance-bond-in-gold-trading"]

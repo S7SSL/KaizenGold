@@ -1,7 +1,7 @@
 SLUG = "gold-refinery-due-diligence"
 TITLE = "Gold Refinery Due Diligence: A Practical Guide"
 CATEGORY = "Refining"
-DESC = "How to diligence a gold refinery — accreditation, assay integrity, settlement terms, sourcing controls — and what refineries diligence in return before accepting your metal."
+DESC = "How to diligence a gold refinery (accreditation, assay integrity, settlement terms, sourcing controls) and what refineries check in return."
 CARD = "Checking the refinery — and what the refinery checks about you — before metal changes hands."
 ABOUT = ["Refinery due diligence", "Gold refining", "Counterparty risk"]
 RELATED = ["how-gold-refineries-operate", "gold-refinery-settlement-process", "kyc-procedures-in-precious-metals"]

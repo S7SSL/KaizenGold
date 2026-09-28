@@ -1,7 +1,7 @@
 SLUG = "gold-export-procedures-explained"
 TITLE = "Gold Export Procedures Explained"
 CATEGORY = "Gold Trading"
-DESC = "Exporting gold legally requires licences, assay and origin documentation, customs declarations, export duties where applicable, and secure logistics. A step-by-step guide to compliant gold export."
+DESC = "Legal gold export needs licences, assay and origin papers, customs declarations, any export duty and secure logistics. A step-by-step guide."
 CARD = "Licences, permits, customs and secure freight — the documentation chain that moves gold across borders legally."
 ABOUT = ["Gold export", "Customs", "Trade documentation"]
 RELATED = ["what-is-a-cif-gold-transaction", "chain-of-custody-in-precious-metals", "kyc-procedures-in-precious-metals"]

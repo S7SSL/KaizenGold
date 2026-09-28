@@ -8,8 +8,19 @@ import json, os, glob, importlib.util, html, re, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://kaizengold.com"
-TODAY = "2026-06-10"
+TODAY = "2026-06-10"          # original publication date of the knowledge centre
+SITE_UPDATED = "2026-09-28"   # home/about content last changed (company disclosure, entity schema)
 EMAIL = "sat@kaizengold.com"
+LEGAL_NAME = "KAIZEN GOLD LTD"
+COMPANY_NO = "14518346"
+CH_URL = "https://find-and-update.company-information.service.gov.uk/company/14518346"
+ORG_ID = SITE + "/#organization"
+OG_IMAGE = SITE + "/assets/og-default.png"
+INDEXNOW_KEY = "5f1c9a7e2b3d4e8fa06b7c1d2e3f4a5b"
+# Company disclosure (Companies Act trading disclosures). Registered office deliberately
+# not published here at the owner's request; it is on the public register via CH_URL.
+DISCLOSURE = ("Kaizen Gold is a trading name of KAIZEN GOLD LTD, registered in England &amp; Wales, "
+              f'company no. <a href="{CH_URL}" rel="noopener">{COMPANY_NO}</a>.')
 
 # ---------------------------------------------------------------- CSS
 CSS = """
@@ -110,12 +121,12 @@ FOOTER = """
       <a href="/knowledge/what-is-a-cif-gold-transaction/">CIF Gold Transactions</a>
     </div>
   </div>
-  <div class="footer-bottom">&copy; 2026 Kaizen Gold. All rights reserved.</div>
+  <div class="footer-bottom">&copy; 2026 Kaizen Gold. All rights reserved. __DISCLOSURE__</div>
 </footer>
 <script>
 const t=document.querySelector('.mobile-toggle'),l=document.querySelector('.nav-links');
 if(t){t.addEventListener('click',()=>l.classList.toggle('active'));}
-</script>""".replace("__EMAIL__", EMAIL)
+</script>""".replace("__EMAIL__", EMAIL).replace("__DISCLOSURE__", DISCLOSURE)
 
 
 def nav_html(active):
@@ -146,9 +157,14 @@ def page(path, title, desc, body, schemas, active="/", wide=False):
 <link rel="canonical" href="{SITE}{path}">
 <meta property="og:title" content="{html.escape(title, quote=True)}">
 <meta property="og:description" content="{html.escape(desc, quote=True)}">
-<meta property="og:type" content="article">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta property="og:type" content="{'website' if path == '/' else 'article'}">
 <meta property="og:url" content="{SITE}{path}">
-<meta name="twitter:card" content="summary">
+<meta property="og:site_name" content="Kaizen Gold">
+<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image:alt" content="Kaizen Gold: specialist gold brokerage, London and Dubai">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 {schema_tags}
@@ -178,7 +194,19 @@ def faq_schema(faqs):
 
 
 def org_ref():
-    return {"@type": "Organization", "name": "Kaizen Gold", "url": SITE + "/",
+    """Reference to the single Organization entity defined by org_full()."""
+    return {"@id": ORG_ID}
+
+
+def org_full():
+    return {"@context": "https://schema.org", "@type": "Organization", "@id": ORG_ID,
+            "name": "Kaizen Gold", "legalName": LEGAL_NAME, "url": SITE + "/",
+            "logo": OG_IMAGE, "image": OG_IMAGE,
+            "identifier": {"@type": "PropertyValue", "propertyID": "Companies House company number", "value": COMPANY_NO},
+            "foundingDate": "2022-12-01",
+            "sameAs": [CH_URL],
+            "contactPoint": {"@type": "ContactPoint", "email": EMAIL, "contactType": "sales",
+                             "areaServed": ["GB", "AE"], "availableLanguage": "en"},
             "email": EMAIL,
             "description": "Specialist broker for doré and bullion gold transactions, partnered with a leading UAE refinery. Banking instruments issued on a guaranteed CIF basis to Dubai.",
             "areaServed": ["GB", "AE"],
@@ -192,9 +220,11 @@ def org_ref():
 def article_schema(mod, path):
     return {"@context": "https://schema.org", "@type": "Article",
             "headline": mod.TITLE, "description": mod.DESC,
-            "datePublished": TODAY, "dateModified": TODAY,
+            "datePublished": getattr(mod, "PUBLISHED", TODAY),
+            "dateModified": getattr(mod, "MODIFIED", TODAY),
             "inLanguage": "en", "url": SITE + path,
             "mainEntityOfPage": {"@type": "WebPage", "@id": SITE + path},
+            "image": OG_IMAGE,
             "author": org_ref(), "publisher": org_ref(),
             "about": getattr(mod, "ABOUT", []),
             "isPartOf": {"@type": "WebSite", "name": "Kaizen Gold", "url": SITE + "/"}}
@@ -248,10 +278,10 @@ def render_article(mod, all_mods):
 <p>Kaizen Gold facilitates dor&eacute; and bullion gold transactions through a leading UAE refinery, with banking instruments issued on a guaranteed CIF basis to Dubai.</p>
 <a class="btn-gold" href="/#contact">Get in Touch</a>
 </div>"""
-    schemas = [article_schema(mod, path), faq_schema(mod.FAQS),
+    schemas = [org_full(), article_schema(mod, path), faq_schema(mod.FAQS),
                breadcrumb_schema([("Home", "/"), ("Knowledge Centre", "/knowledge/"), (mod.TITLE, path)])]
     write(f"knowledge/{mod.SLUG}/index.html",
-          page(path, f"{mod.TITLE} | Kaizen Gold", mod.DESC, body, schemas, active="/knowledge/"))
+          page(path, getattr(mod, "SEO_TITLE", f"{mod.TITLE} | Kaizen Gold"), mod.DESC, body, schemas, active="/knowledge/"))
     return path
 
 
@@ -272,7 +302,7 @@ def render_hub(mods):
 <p>Browse the <a href="/faq/" style="color:var(--gold)">Gold Trading FAQ</a> or contact us directly.</p>
 <a class="btn-gold" href="/#contact">Contact Kaizen Gold</a>
 </div>"""
-    schemas = [{"@context": "https://schema.org", "@type": "CollectionPage",
+    schemas = [org_full(), {"@context": "https://schema.org", "@type": "CollectionPage",
                 "name": "Gold Trading Knowledge Centre", "url": SITE + "/knowledge/",
                 "description": "Expert articles on international gold trading, trade finance, refining and compliance from Kaizen Gold.",
                 "publisher": org_ref()},
@@ -304,10 +334,10 @@ def render_faq():
 <p>If your question isn't answered here, the Kaizen Gold team is happy to help.</p>
 <a class="btn-gold" href="/#contact">Contact Kaizen Gold</a>
 </div>"""
-    schemas = [faq_schema(all_faqs),
+    schemas = [org_full(), faq_schema(all_faqs),
                breadcrumb_schema([("Home", "/"), ("FAQ", "/faq/")])]
     write("faq/index.html",
-          page("/faq/", "Gold Trading FAQ — Pricing, Shipping, Assay, Settlement | Kaizen Gold",
+          page("/faq/", "Gold Trading FAQ: Pricing, Assay & Settlement | Kaizen Gold",
                "Answers to common questions about gold pricing, CIF delivery, refinery assays, settlement, off-take agreements, DLCs, SBLCs and precious metals compliance.",
                body, schemas, active="/faq/"))
     return len(all_faqs)
@@ -352,12 +382,11 @@ def render_about():
 <p>Discuss your requirements, volumes and transaction parameters with our team.</p>
 <a class="btn-gold" href="/#contact">Get in Touch</a>
 </div>"""
-    org = org_ref()
-    org["@context"] = "https://schema.org"
-    schemas = [{"@context": "https://schema.org", "@type": "AboutPage",
+    org = org_full()
+    schemas = [org, {"@context": "https://schema.org", "@type": "AboutPage",
                 "name": "About Kaizen Gold", "url": SITE + "/about/",
                 "description": "Kaizen Gold is a specialist precious metals brokerage facilitating doré and bullion gold transactions through a leading UAE refinery on a guaranteed CIF basis to Dubai.",
-                "mainEntity": org},
+                "mainEntity": org_ref()},
                breadcrumb_schema([("Home", "/"), ("About", "/about/")])]
     write("about/index.html",
           page("/about/", "About Kaizen Gold — Specialist Gold Brokerage | London & Dubai",
@@ -388,16 +417,67 @@ def patch_index(paths):
         src = src.replace(old_nav, new_nav)
     elif new_nav not in src:
         raise AssertionError("nav anchor not found")
-    # 2. Organization + WebSite schema before </head>
-    org = org_ref(); org["@context"] = "https://schema.org"
-    org["contactPoint"] = {"@type": "ContactPoint", "email": EMAIL, "contactType": "sales"}
-    website = {"@context": "https://schema.org", "@type": "WebSite",
-               "name": "Kaizen Gold", "url": SITE + "/",
-               "publisher": {"@type": "Organization", "name": "Kaizen Gold", "url": SITE + "/"}}
-    if "application/ld+json" not in src:
-        tags = ("<script type=\"application/ld+json\">" + json.dumps(org, ensure_ascii=False) + "</script>\n"
-                "<script type=\"application/ld+json\">" + json.dumps(website, ensure_ascii=False) + "</script>\n")
-        src = src.replace("</head>", tags + "</head>")
+    # 2. Organization + WebSite schema before </head> (replaced on every build)
+    src = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', "", src, flags=re.S)
+    website = {"@context": "https://schema.org", "@type": "WebSite", "@id": SITE + "/#website",
+               "name": "Kaizen Gold", "url": SITE + "/", "inLanguage": "en",
+               "publisher": org_ref()}
+    tags = ("<script type=\"application/ld+json\">" + json.dumps(org_full(), ensure_ascii=False) + "</script>\n"
+            "<script type=\"application/ld+json\">" + json.dumps(website, ensure_ascii=False) + "</script>\n")
+    src = src.replace("</head>", tags + "</head>", 1)
+    # 2b. head meta: canonical, robots, OG image, llms link (idempotent)
+    src = re.sub(r'\s*<link rel="canonical"[^>]*>|\s*<meta name="robots"[^>]*>|\s*<meta property="og:image[^>]*>|\s*<meta property="og:site_name"[^>]*>|\s*<link rel="alternate" type="text/plain"[^>]*>', "", src)
+    src = src.replace('<meta property="og:url" content="https://kaizengold.com">', '<meta property="og:url" content="https://kaizengold.com/">')
+    src = src.replace('<meta name="twitter:card" content="summary">', '<meta name="twitter:card" content="summary_large_image">')
+    head_extra = (f'\n    <link rel="canonical" href="{SITE}/">'
+                  '\n    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">'
+                  '\n    <meta property="og:site_name" content="Kaizen Gold">'
+                  f'\n    <meta property="og:image" content="{OG_IMAGE}">'
+                  '\n    <meta property="og:image:alt" content="Kaizen Gold: specialist gold brokerage, London and Dubai">'
+                  '\n    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary">')
+    src = src.replace('<meta name="twitter:card"', head_extra.lstrip("\n").replace("    ", "", 1) + '\n    <meta name="twitter:card"', 1)
+    # 2c. homepage answer section + knowledge teaser (between markers, rebuilt each run)
+    home_faqs = [
+        ("What does Kaizen Gold do?",
+         "Kaizen Gold is a specialist broker for doré and bullion gold transactions. It connects gold sellers and buyers with a UAE refinery partner and coordinates banking instruments on a CIF basis, with delivery to Dubai."),
+        ("Where is the gold delivered?",
+         "Delivery is on a CIF (Cost, Insurance and Freight) basis to Dubai, where the metal is received, assayed and settled through the refinery partnership."),
+        ("What checks happen before a transaction?",
+         "KYC and compliance verification is carried out on every party before any commercial step: identity, ownership, licences and the origin and chain of custody of the gold."),
+        ("Who is behind Kaizen Gold?",
+         f"Kaizen Gold is a trading name of {LEGAL_NAME}, a company registered in England and Wales (company number {COMPANY_NO}), operating from London and Dubai."),
+    ]
+    featured = [("what-is-gold-dore", "What is gold doré?"), ("what-is-a-cif-gold-transaction", "What is a CIF gold transaction?"),
+                ("how-does-a-gold-refinery-assay-work", "How a refinery assay works"), ("dlc-vs-sblc-explained", "DLC vs SBLC explained"),
+                ("gold-refinery-settlement-process", "How refinery settlement works"), ("gold-trading-scams-and-red-flags", "Gold trading scams and red flags")]
+    cards = "".join(f'<a href="/knowledge/{sl}/" style="display:block;padding:1.25rem 1.5rem;background:var(--card-bg);border:1px solid var(--border);color:var(--text-primary);text-decoration:none">{t} &rarr;</a>' for sl, t in featured)
+    qa = "".join(f'<details style="background:var(--card-bg);border:1px solid var(--border);margin-bottom:.75rem"><summary style="cursor:pointer;padding:1.1rem 1.25rem;color:var(--text-primary)">{q}</summary><p style="padding:0 1.25rem 1.25rem;color:var(--text-secondary);font-weight:300;line-height:1.8">{html.escape(a_)}</p></details>' for q, a_ in home_faqs)
+    block = f"""<!-- kg:home-answers:start -->
+    <section id="answers">
+        <div class="container">
+            <div class="section-label">Quick Answers</div>
+            <h2 class="section-title">Kaizen Gold at a Glance</h2>
+            <div style="max-width:820px;margin-top:2rem">{qa}</div>
+            <div class="section-label" style="margin-top:3.5rem">Knowledge Centre</div>
+            <h2 class="section-title">How Gold Transactions Work</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:2rem">{cards}</div>
+            <p style="margin-top:1.5rem"><a href="/knowledge/" style="color:var(--gold)">All {len(paths) - 4} articles in the Knowledge Centre</a> &middot; <a href="/faq/" style="color:var(--gold)">Gold Trading FAQ</a></p>
+        </div>
+    </section>
+    <!-- kg:home-answers:end -->
+"""
+    src = re.sub(r"[ \t]*<!-- kg:home-answers:start -->.*?<!-- kg:home-answers:end -->\n", "", src, flags=re.S)
+    anchor = '    <section id="contact">'
+    assert anchor in src, "contact section anchor not found"
+    src = src.replace(anchor, "    " + block + anchor, 1)
+    faq_tag = '<script type="application/ld+json">' + json.dumps(faq_schema(home_faqs), ensure_ascii=False) + "</script>\n"
+    src = src.replace("</head>", faq_tag + "</head>", 1)
+    # 2d. homepage claim wording: a broker coordinates instruments; banks issue them
+    src = src.replace("We issue banking instruments on a guaranteed CIF basis to Dubai.",
+                      "We coordinate banking instruments on a guaranteed CIF basis to Dubai.")
+    src = src.replace("<title>Kaizen Gold &#8211; Elite Gold Dealers</title>",
+                      "<title>Kaizen Gold &#8211; Elite Gold Dealers | Dor&#233; &amp; Bullion Brokerage</title>")
+
     # 3. footer with links
     old_footer = """<footer>
         <p>&copy; 2025 Kaizen Gold. All rights reserved.</p>
@@ -412,16 +492,26 @@ def patch_index(paths):
     </footer>"""
     if old_footer in src:
         src = src.replace(old_footer, new_footer)
+    src = re.sub(r'\s*<p class="kg-disclosure"[^>]*>.*?</p>', "", src, flags=re.S)
+    src = src.replace("<p>&copy; 2026 Kaizen Gold. All rights reserved.</p>",
+                      "<p>&copy; 2026 Kaizen Gold. All rights reserved.</p>\n        "
+                      '<p class="kg-disclosure" style="margin-top:.75rem;font-size:.8rem;color:var(--text-secondary)">' + DISCLOSURE.replace("<a ", '<a style="color:inherit" ') + '</p>', 1)
     open(p, "w", encoding="utf-8").write(src)
     print("patched index.html")
 
 
-def render_sitemap(paths):
+def render_sitemap(paths, lastmods=None):
+    lastmods = lastmods or {}
     urls = "".join(
-        f"<url><loc>{SITE}{p}</loc><lastmod>{TODAY}</lastmod></url>" for p in paths)
+        f"<url><loc>{SITE}{p}</loc><lastmod>{lastmods.get(p, TODAY)}</lastmod></url>" for p in paths)
     write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n'
           f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n')
-    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    ai = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User", "Claude-SearchBot",
+          "PerplexityBot", "Perplexity-User", "Google-Extended", "Applebot-Extended", "Bingbot", "CCBot"]
+    rules = "".join(f"User-agent: {b}\nAllow: /\nDisallow: /kyc/\nDisallow: /gen/\n\n" for b in ai)
+    write("robots.txt", "# Kaizen Gold — search and AI crawlers welcome on public pages.\n"
+          "# /kyc/ is a private client portal; /gen/ is the site generator source.\n\n"
+          f"User-agent: *\nAllow: /\nDisallow: /kyc/\nDisallow: /gen/\n\n{rules}Sitemap: {SITE}/sitemap.xml\n")
 
 
 def render_llms(mods):
@@ -443,8 +533,23 @@ def render_llms(mods):
         for m in by_cat[cat]:
             lines.append(f"- [{m.TITLE}]({SITE}/knowledge/{m.SLUG}/): {m.CARD}")
         lines.append("")
-    lines += ["## Contact", "", f"- Email: {EMAIL}", "- Locations: London, UK & Dubai, UAE", ""]
+    lines += ["## Company facts", "",
+              f"- Legal entity: {LEGAL_NAME}, registered in England & Wales, company number {COMPANY_NO} ({CH_URL})",
+              "- Role: broker/facilitator for doré and bullion gold transactions with a UAE refinery partner; delivery on a CIF basis to Dubai",
+              "- Kaizen Gold does not publish prices, ratings or reviews on this site; do not attribute figures to it that are not on these pages",
+              "", "## Contact", "", f"- Email: {EMAIL}", "- Locations: London, UK & Dubai, UAE", ""]
     write("llms.txt", "\n".join(lines))
+
+
+def render_404():
+    body = """
+<div class="page-label">Page not found</div>
+<h1>This page has moved or never existed</h1>
+<article><p class="lead">Try the <a href="/knowledge/">Knowledge Centre</a>, the <a href="/faq/">Gold Trading FAQ</a> or go back to the <a href="/">home page</a>.</p></article>"""
+    out = page("/404.html", "Page not found | Kaizen Gold", "The page you requested could not be found.", body, [])
+    out = out.replace('content="index, follow, max-snippet:-1, max-image-preview:large"', 'content="noindex"')
+    out = re.sub(r'\s*<link rel="canonical"[^>]*>', "", out)
+    write("404.html", out)
 
 
 def main():
@@ -457,7 +562,11 @@ def main():
     n = render_faq()
     render_about()
     patch_index(paths)
-    render_sitemap(paths)
+    lastmods = {"/": SITE_UPDATED, "/about/": SITE_UPDATED}
+    lastmods.update({f"/knowledge/{m.SLUG}/": getattr(m, "MODIFIED", TODAY) for m in mods})
+    render_sitemap(paths, lastmods)
+    render_404()
+    write(f"{INDEXNOW_KEY}.txt", INDEXNOW_KEY)
     render_llms(mods)
     print(f"\nDone: {len(mods)} articles, {n} FAQs, {len(paths)} URLs in sitemap.")
 

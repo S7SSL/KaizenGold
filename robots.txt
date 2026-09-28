@@ -1,4 +1,69 @@
+# Kaizen Gold — search and AI crawlers welcome on public pages.
+# /kyc/ is a private client portal; /gen/ is the site generator source.
+
 User-agent: *
 Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
+
+User-agent: CCBot
+Allow: /
+Disallow: /kyc/
+Disallow: /gen/
 
 Sitemap: https://kaizengold.com/sitemap.xml

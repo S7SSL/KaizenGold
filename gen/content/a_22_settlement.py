@@ -1,7 +1,7 @@
 SLUG = "gold-refinery-settlement-process"
 TITLE = "The Gold Refinery Settlement Process"
 CATEGORY = "Refining"
-DESC = "How refineries pay for gold: net melt weight × assay = fine content; payable percentage applied; priced at the benchmark fixing; charges deducted; paid within the contractual window."
+DESC = "How refineries pay for gold: melt weight × assay = fine content, payable percentage, benchmark price, charges deducted, paid on contract terms."
 CARD = "From assay result to money in the bank — every step and deduction in a refinery settlement, worked through."
 ABOUT = ["Refinery settlement", "Gold settlement", "Payable gold"]
 RELATED = ["how-does-a-gold-refinery-assay-work", "what-is-fine-gold-content", "what-is-lbma-pricing"]

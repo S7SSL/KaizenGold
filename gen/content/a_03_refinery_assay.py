@@ -1,7 +1,7 @@
 SLUG = "how-does-a-gold-refinery-assay-work"
 TITLE = "How Does a Gold Refinery Assay Work?"
 CATEGORY = "Refining"
-DESC = "A refinery assay determines the exact gold content of a delivered lot. The metal is melted into a homogeneous bar, sampled, and tested — usually by fire assay — and the result drives settlement."
+DESC = "A refinery assay fixes the exact gold content of a delivered lot: melted, sampled and fire-assayed. The result drives settlement. How it works."
 CARD = "Melt, sample, fire assay — how refineries establish the exact gold content that determines what a seller is paid."
 ABOUT = ["Gold assay", "Fire assay", "Gold refining"]
 RELATED = ["what-is-gold-dore", "what-is-fine-gold-content", "what-is-a-cif-gold-transaction"]

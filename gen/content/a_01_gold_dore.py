@@ -1,7 +1,7 @@
 SLUG = "what-is-gold-dore"
 TITLE = "What Is Gold Doré?"
 CATEGORY = "Gold Trading"
-DESC = "Gold doré is a semi-pure alloy bar produced at a mine, typically containing 60–95% gold, that must be refined to investment-grade purity. Learn how doré is produced, valued and settled."
+DESC = "Gold doré is a semi-pure mine bar, typically 60–95% gold, refined before sale. How doré is produced, valued on fine content and settled."
 CARD = "Semi-pure gold bars produced at the mine — how doré is made, valued, shipped and refined to 999.9 purity."
 ABOUT = ["Gold doré", "Gold refining", "Gold trading"]
 RELATED = ["how-does-a-gold-refinery-assay-work", "what-is-fine-gold-content", "what-is-a-cif-gold-transaction"]

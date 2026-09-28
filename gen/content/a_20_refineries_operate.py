@@ -1,7 +1,7 @@
 SLUG = "how-gold-refineries-operate"
 TITLE = "How Gold Refineries Operate"
 CATEGORY = "Refining"
-DESC = "Gold refineries receive doré and scrap, assay every lot, refine the metal to 995.0–999.9 fineness using the Miller and Wohlwill processes, cast accredited bars and settle with suppliers."
+DESC = "How gold refineries work: receiving doré and scrap, assaying each lot, refining to 995.0–999.9, casting bars and settling with suppliers."
 CARD = "Inside the refinery — receiving, assaying, Miller and Wohlwill refining, casting and settlement."
 ABOUT = ["Gold refinery", "Gold refining", "Miller process", "Wohlwill process"]
 RELATED = ["how-does-a-gold-refinery-assay-work", "gold-refinery-settlement-process", "gold-refinery-due-diligence"]

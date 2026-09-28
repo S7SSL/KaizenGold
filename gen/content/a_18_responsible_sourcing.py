@@ -1,7 +1,7 @@
 SLUG = "responsible-gold-sourcing"
 TITLE = "Responsible Gold Sourcing: How It Works"
 CATEGORY = "Compliance"
-DESC = "Responsible gold sourcing means verifying mine origin, lawful export, clean custody and freedom from conflict financing — evidenced through documentation that follows the metal."
+DESC = "Responsible gold sourcing: verified mine origin, lawful export, clean custody and no conflict financing, evidenced by documents that follow the metal."
 CARD = "Origin you can prove — the practices and paperwork that make gold acceptable to refineries, banks and buyers."
 ABOUT = ["Responsible sourcing", "Gold supply chain", "Ethical gold"]
 RELATED = ["oecd-gold-supply-chain-guidance", "chain-of-custody-in-precious-metals", "gold-export-procedures-explained"]

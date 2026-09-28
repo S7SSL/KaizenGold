@@ -1,7 +1,7 @@
 SLUG = "what-is-fine-gold-content"
 TITLE = "What Is Fine Gold Content?"
 CATEGORY = "Refining"
-DESC = "Fine gold content is the quantity of pure gold inside a bar or lot — gross weight multiplied by fineness. It is the figure every gold settlement is calculated on. Learn how it works."
+DESC = "Fine gold content is gross weight × fineness: the pure gold in a bar or lot, and the figure every gold settlement is calculated on."
 CARD = "Gross weight × fineness = the number every settlement is built on. Fineness, karats and payable gold explained."
 ABOUT = ["Fine gold", "Fineness", "Gold purity"]
 RELATED = ["what-is-gold-dore", "how-does-a-gold-refinery-assay-work", "what-is-lbma-pricing"]

@@ -1,7 +1,7 @@
 SLUG = "oecd-gold-supply-chain-guidance"
 TITLE = "OECD Gold Supply Chain Guidance Explained"
 CATEGORY = "Compliance"
-DESC = "The OECD Due Diligence Guidance is the international framework for responsible mineral supply chains — a five-step process for tracing gold origin and avoiding conflict financing."
+DESC = "The OECD Due Diligence Guidance explained: the five-step framework for tracing gold origin and keeping conflict financing out of the supply chain."
 CARD = "The five-step framework behind responsible gold — how the OECD guidance shapes refinery and LBMA sourcing rules."
 ABOUT = ["OECD Due Diligence Guidance", "Responsible sourcing", "Gold supply chain"]
 RELATED = ["responsible-gold-sourcing", "chain-of-custody-in-precious-metals", "gold-refinery-due-diligence"]

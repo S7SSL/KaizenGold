@@ -1,7 +1,7 @@
 SLUG = "chain-of-custody-in-precious-metals"
 TITLE = "Chain of Custody in Precious Metals"
 CATEGORY = "Refining"
-DESC = "Chain of custody is the unbroken documented record of who held gold at every stage from mine to refinery — the backbone of security, settlement integrity and responsible sourcing."
+DESC = "Chain of custody is the unbroken record of who held gold from mine to refinery: the backbone of security, settlement and responsible sourcing."
 CARD = "The unbroken paper trail from mine to refinery — seals, weights, signatures, and why gaps kill deals."
 ABOUT = ["Chain of custody", "Gold supply chain", "Traceability"]
 RELATED = ["responsible-gold-sourcing", "gold-export-procedures-explained", "how-does-a-gold-refinery-assay-work"]

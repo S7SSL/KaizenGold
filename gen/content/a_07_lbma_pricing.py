@@ -1,7 +1,7 @@
 SLUG = "what-is-lbma-pricing"
 TITLE = "What Is LBMA Pricing?"
 CATEGORY = "Pricing"
-DESC = "The LBMA Gold Price is the global benchmark for gold, set twice daily in London via electronic auction and quoted in US dollars per troy ounce. Learn how it is set and used in contracts."
+DESC = "The LBMA Gold Price is the global benchmark, set twice daily in London in US dollars per troy ounce. How it is set and used in gold contracts."
 CARD = "The twice-daily London benchmark that international gold contracts price against — how it's set and applied."
 ABOUT = ["LBMA", "LBMA Gold Price", "Gold pricing"]
 RELATED = ["what-is-fine-gold-content", "what-is-a-cif-gold-transaction", "what-is-gold-dore"]

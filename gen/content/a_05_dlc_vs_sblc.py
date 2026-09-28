@@ -1,7 +1,7 @@
 SLUG = "dlc-vs-sblc-explained"
 TITLE = "DLC vs SBLC: What's the Difference?"
 CATEGORY = "Trade Finance"
-DESC = "A DLC is a primary payment mechanism paid against shipping documents; an SBLC is a backstop drawn only on default. Learn when each instrument is used in gold transactions."
+DESC = "A DLC pays against shipping documents; an SBLC is a backstop drawn only on default. When each instrument is used in gold transactions."
 CARD = "Primary payment vs safety net — how documentary and standby letters of credit differ and when gold deals use each."
 ABOUT = ["Documentary letter of credit", "Standby letter of credit", "Trade finance"]
 RELATED = ["what-is-an-mt700-dlc", "what-is-a-performance-bond-in-gold-trading", "what-is-a-cif-gold-transaction"]

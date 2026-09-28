@@ -1,7 +1,7 @@
 SLUG = "gold-purchase-agreements-key-clauses"
 TITLE = "Gold Purchase Agreements: The Key Clauses"
 CATEGORY = "Contracts"
-DESC = "The clauses that decide gold deals: quantity and quality, delivery basis, pricing mechanics, assay rights, payment instruments, sequencing, and default remedies — explained clause by clause."
+DESC = "The clauses that decide gold deals: quantity, quality, delivery basis, pricing, assay rights, payment instruments, sequencing and remedies."
 CARD = "The contract is the deal — quantity, pricing, assay rights, instruments and sequencing, clause by clause."
 ABOUT = ["Gold contracts", "Sale and purchase agreements", "Gold trading"]
 RELATED = ["gold-refinery-settlement-process", "trade-finance-instruments-in-gold-trading", "what-is-a-gold-off-take-agreement"]

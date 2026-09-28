@@ -1,7 +1,7 @@
 SLUG = "how-gold-is-transported-securely"
 TITLE = "How Gold Is Transported Securely"
 CATEGORY = "Logistics"
-DESC = "Gold moves internationally through specialist valuables carriers: armoured ground transport, secure air freight, sealed chain of custody and full-value insurance. How it works end to end."
+DESC = "How gold moves internationally: specialist valuables carriers, armoured transport, secure air freight, sealed custody and full-value insurance."
 CARD = "Armoured trucks, valuables air freight, seals and insurance — the secure logistics behind every gold shipment."
 ABOUT = ["Gold logistics", "Secure transport", "Valuables freight"]
 RELATED = ["what-is-a-cif-gold-transaction", "chain-of-custody-in-precious-metals", "gold-export-procedures-explained"]
